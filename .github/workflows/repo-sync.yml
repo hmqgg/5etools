@@ -9,11 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      with:
-        persist-credentials: false
     - name: repo-sync
       uses: repo-sync/github-sync@v2
       with:
         source_repo: "https://github.com/fvtt-cn/5etools.git"
         source_branch: "master"
         destination_branch: "master"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
